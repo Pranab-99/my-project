@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    password: Basudev143
+    url: jdbc:mysql://localhost:3306/my_reg_db?createDatabaseIfNotExist=true
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+springdoc:
+  packagesToScan: com.example.Controller
+  pathsToMatch: /api/users/**
+
+  application:
+    name:MyRegistrationApplication
+  server:
+    port: 9091
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:8761/eureka/
+     
+     logging:
+       level:
+         com.netflix.discovery: DEBUG
